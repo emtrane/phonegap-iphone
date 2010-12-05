@@ -25,16 +25,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation) interfaceOrientation 
 {
-	BOOL autoRotate = [self.supportedOrientations count] > 1; // autorotate if only more than 1 orientation supported
-	if (autoRotate)
-	{
-		if ([self.supportedOrientations containsObject:
-			 [NSNumber numberWithInt:interfaceOrientation]]) {
-			return YES;
-		}
-    }
-	
-	return NO;
+   return [self.supportedOrientations containsObject:[NSNumber numberWithInt:interfaceOrientation]];
 }
 
 /**
